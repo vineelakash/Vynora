@@ -1,0 +1,123 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "VYNORA",
+  "mainBinaryName": "VYNORA",
+  "version": "0.1.0",
+  "identifier": "app.needle.windows",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "VYNORA",
+        "width": 1200,
+        "height": 740,
+        "minWidth": 820,
+        "minHeight": 600,
+        "resizable": true,
+        "center": true,
+        "decorations": true,
+        "backgroundColor": "#000000"
+      },
+      {
+        "label": "island",
+        "title": "VYNORA Island",
+        "url": "island.html",
+        "width": 324,
+        "height": 74,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "resizable": false,
+        "maximizable": false,
+        "minimizable": false,
+        "visible": false,
+        "focus": false,
+        "focusable": false,
+        "noRedirectionBitmap": false,
+        "dragDropEnabled": false
+      },
+      {
+        "label": "vinyl",
+        "title": "VYNORA Vinyl",
+        "url": "vinyl.html",
+        "width": 540,
+        "height": 340,
+        "minWidth": 260,
+        "minHeight": 290,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": false,
+        "skipTaskbar": true,
+        "resizable": true,
+        "maximizable": false,
+        "minimizable": false,
+        "visible": false,
+        "focus": false,
+        "noRedirectionBitmap": false,
+        "dragDropEnabled": false
+      },
+      {
+        "label": "lyrics-player",
+        "title": "VYNORA Lyrics Player",
+        "url": "lyrics-player.html",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 800,
+        "minHeight": 600,
+        "decorations": false,
+        "transparent": false,
+        "shadow": false,
+        "alwaysOnTop": false,
+        "skipTaskbar": false,
+        "resizable": true,
+        "visible": false,
+        "center": true,
+        "backgroundColor": "#060608"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "VYNORA Contributors",
+    "category": "Music",
+    "shortDescription": "VYNORA — Windows music companion with synchronized lyrics, Beat Glow, Dynamic Island, and Desktop Vinyl",
+    "longDescription": "VYNORA detects local Spotify Desktop playback via Windows Global System Media Transport Controls (GSMTC) and presents real-time track metadata, album artwork, kinetic lyrics, audio-reactive Beat Glow, a floating Dynamic Island overlay, and an interactive Desktop Vinyl widget.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/64x64.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "allowDowngrades": true,
+      "nsis": {
+        "installMode": "currentUser",
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico",
+        "compression": "lzma"
+      },
+      "wix": {
+        "upgradeCode": "9b84ad60-b9a2-5c15-b13a-4d2f6778d919",
+        "language": "en-US"
+      }
+    }
+  }
+}

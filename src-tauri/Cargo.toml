@@ -1,0 +1,37 @@
+[package]
+name = "needle-windows"
+version = "0.1.0"
+description = "VYNORA — Native Windows desktop music companion"
+authors = ["VYNORA Contributors"]
+edition = "2021"
+
+[lib]
+name = "needle_windows_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[[bin]]
+name = "VYNORA"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+tauri-plugin-single-instance = "2"
+windows = { version = "0.62", features = [
+    "Foundation",
+    "Foundation_Collections",
+    "Media_Control",
+    "Storage_Streams",
+    "Win32_Foundation",
+    "Win32_Graphics_Dwm",
+    "Win32_Graphics_Gdi",
+    "Win32_Media_Audio",
+    "Win32_System_Com",
+    "Win32_System_WinRT",
+    "Win32_UI_WindowsAndMessaging",
+] }
+windows-future = "0.3"

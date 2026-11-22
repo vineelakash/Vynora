@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vynora-bg: #050509;
+  --color-vynora-surface: #0B0B13;
+  --color-vynora-surface-elevated: #12121D;
+  --color-vynora-surface-hover: #161626;
+  --color-vynora-surface-active: #1C1B2E;
+  --color-vynora-border: #292638;
+  --color-vynora-border-subtle: #1C1A27;
+  --color-vynora-border-accent: rgba(134, 80, 255, 0.35);
+  --color-vynora-violet: #8650FF;
+  --color-vynora-blue: #416BFF;
+  --color-vynora-magenta: #E65BFF;
+  --color-vynora-orange: #FF9368;
+  --color-vynora-gold: #FFC078;
+  --color-vynora-text-primary: #F5F3FA;
+  --color-vynora-text-secondary: #A6A2B3;
+  --color-vynora-text-muted: #6B667B;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, sans-serif;
+    background-color: #050509;
+    color: #F5F3FA;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  button:focus-visible,
+  select:focus-visible,
+  input:focus-visible {
+    outline: 2px solid rgba(134, 80, 255, 0.65);
+    outline-offset: 1px;
+  }
+}
+
+.lyrics-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lyrics-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lyrics-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+.lyrics-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
